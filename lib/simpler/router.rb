@@ -22,6 +22,10 @@ module Simpler
       @routes.find { |route| route.match?(method, path) }
     end
 
+    def resource_id(env)
+      env['PATH_INFO'].split("/").last if env['PATH_INFO'].match(/.\/\w+\z/)
+    end
+
     private
 
     def add_route(method, path, route_point)

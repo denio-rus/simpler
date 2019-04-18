@@ -15,6 +15,10 @@ module Simpler
       ERB.new(template).result(binding)
     end
 
+    def render_plain_text
+      @env['simpler.rendering_value']
+    end
+
     private
 
     def controller
