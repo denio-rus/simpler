@@ -1,2 +1,6 @@
 /.byebug_history
+<<<<<<< HEAD
 *.log
+=======
+log/app.log
+>>>>>>> 453a9fe09fb2a70209000a2f08c299e8c6770222
