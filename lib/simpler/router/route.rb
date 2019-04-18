@@ -12,11 +12,8 @@ module Simpler
       end
 
       def match?(method, path)
-        path[/\d+\z/] = ':id' if path.match(/.\/\d+\z/)
-          
         @method == method && path == @path
       end
-
     end
   end
 end

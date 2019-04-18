@@ -309,3 +309,59 @@ I, [2019-04-18T09:54:03.515097 #26759]  INFO -- : Request: GET http://localhost:
 I, [2019-04-18T09:54:03.515163 #26759]  INFO -- : Parameters: {"fly"=>"1212141"}
 I, [2019-04-18T09:54:03.515520 #26759]  INFO -- : Handler: tests#show
 I, [2019-04-18T09:54:03.515573 #26759]  INFO -- : Response: 200 [text/html] tests/show
+I, [2019-04-18T13:59:13.139767 #29388]  INFO -- : Request: GET http://localhost:9292/tests/32?fly=1212141
+I, [2019-04-18T13:59:13.140880 #29388]  INFO -- : Parameters: {"fly"=>"1212141"}
+I, [2019-04-18T13:59:13.459248 #29388]  INFO -- : Request: GET http://localhost:9292/favicon.ico
+I, [2019-04-18T13:59:13.459309 #29388]  INFO -- : Parameters: {}
+I, [2019-04-18T14:01:21.066206 #29422]  INFO -- : Request: GET http://localhost:9292/tests/32?fly=1212141
+I, [2019-04-18T14:01:21.067359 #29422]  INFO -- : Parameters: {"fly"=>"1212141"}
+I, [2019-04-18T14:01:24.632642 #29422]  INFO -- : Request: GET http://localhost:9292/tests/32?fly=1212141
+I, [2019-04-18T14:01:24.632717 #29422]  INFO -- : Parameters: {"fly"=>"1212141"}
+I, [2019-04-18T14:03:18.014807 #29460]  INFO -- : Request: GET http://localhost:9292/tests/32?fly=1212141
+I, [2019-04-18T14:03:18.016024 #29460]  INFO -- : Parameters: {"fly"=>"1212141"}
+I, [2019-04-18T14:11:04.087698 #29460]  INFO -- : Request: GET http://localhost:9292/favicon.ico
+I, [2019-04-18T14:11:04.087761 #29460]  INFO -- : Parameters: {}
+I, [2019-04-18T14:11:27.195793 #29621]  INFO -- : Request: GET http://localhost:9292/tests/32?fly=1212141
+I, [2019-04-18T14:11:27.197786 #29621]  INFO -- : Parameters: {"fly"=>"1212141"}
+I, [2019-04-18T14:17:15.431740 #29621]  INFO -- : Request: GET http://localhost:9292/tests/179/questions/fr32
+I, [2019-04-18T14:17:15.439557 #29621]  INFO -- : Parameters: {}
+I, [2019-04-18T14:18:39.005758 #29706]  INFO -- : Request: GET http://localhost:9292/tests/179/questions/fr32
+I, [2019-04-18T14:18:39.006952 #29706]  INFO -- : Parameters: {}
+I, [2019-04-18T14:19:59.265938 #29706]  INFO -- : Request: GET http://localhost:9292/tests/1
+I, [2019-04-18T14:19:59.267108 #29706]  INFO -- : Parameters: {}
+I, [2019-04-18T14:22:42.502526 #29706]  INFO -- : Request: GET http://localhost:9292/tests/1
+I, [2019-04-18T14:22:42.502596 #29706]  INFO -- : Parameters: {}
+I, [2019-04-18T14:23:00.976086 #29790]  INFO -- : Request: GET http://localhost:9292/tests/1
+I, [2019-04-18T14:23:00.977666 #29790]  INFO -- : Parameters: {}
+I, [2019-04-18T14:25:33.973444 #29790]  INFO -- : Handler: tests#show
+I, [2019-04-18T14:25:33.973511 #29790]  INFO -- : Response: 200 [text/html] tests/show
+I, [2019-04-18T14:26:08.980721 #29790]  INFO -- : Request: GET http://localhost:9292/tests/1/questions/44
+I, [2019-04-18T14:26:08.983490 #29790]  INFO -- : Parameters: {}
+I, [2019-04-18T14:31:01.175336 #29891]  INFO -- : Request: GET http://localhost:9292/tests/1
+I, [2019-04-18T14:31:01.177722 #29891]  INFO -- : Parameters: {}
+I, [2019-04-18T14:31:01.180339 #29891]  INFO -- : Handler: tests#show
+I, [2019-04-18T14:31:01.183657 #29891]  INFO -- : Response: 200 [text/html] tests/show
+I, [2019-04-18T14:32:21.321317 #29927]  INFO -- : Request: GET http://localhost:9292/tests/1
+I, [2019-04-18T14:32:21.322511 #29927]  INFO -- : Parameters: {}
+I, [2019-04-18T14:44:47.002430 #30124]  INFO -- : Request: GET http://localhost:9292/tests/1
+I, [2019-04-18T14:44:47.003547 #30124]  INFO -- : Parameters: {}
+I, [2019-04-18T14:44:47.005890 #30124]  INFO -- : Handler: tests#show
+I, [2019-04-18T14:44:47.006775 #30124]  INFO -- : Response: 200 [text/html] tests/show
+I, [2019-04-18T14:45:45.362549 #30154]  INFO -- : Request: GET http://localhost:9292/tests/1
+I, [2019-04-18T14:45:45.363885 #30154]  INFO -- : Parameters: {}
+I, [2019-04-18T14:45:45.370415 #30154]  INFO -- : Handler: tests#show
+I, [2019-04-18T14:45:45.371382 #30154]  INFO -- : Response: 200 [text/html] tests/show
+I, [2019-04-18T14:46:33.088385 #30154]  INFO -- : Request: GET http://localhost:9292/tests/1/questions/1
+I, [2019-04-18T14:46:33.089512 #30154]  INFO -- : Parameters: {}
+I, [2019-04-18T14:47:20.031046 #30154]  INFO -- : Request: GET http://localhost:9292/tests/1&fu=23
+I, [2019-04-18T14:47:20.032212 #30154]  INFO -- : Parameters: {}
+I, [2019-04-18T14:47:20.036627 #30154]  INFO -- : Handler: tests#show
+I, [2019-04-18T14:47:20.037472 #30154]  INFO -- : Response: 200 [text/html] tests/show
+I, [2019-04-18T14:47:33.622740 #30154]  INFO -- : Request: GET http://localhost:9292/tests/1?fu=23
+I, [2019-04-18T14:47:33.625129 #30154]  INFO -- : Parameters: {"fu"=>"23"}
+I, [2019-04-18T14:47:33.626351 #30154]  INFO -- : Handler: tests#show
+I, [2019-04-18T14:47:33.627168 #30154]  INFO -- : Response: 200 [text/html] tests/show
+I, [2019-04-18T16:14:40.091839 #30788]  INFO -- : Request: GET http://localhost:9292/tests/134?fu=23
+I, [2019-04-18T16:14:40.093325 #30788]  INFO -- : Parameters: {"fu"=>"23"}
+I, [2019-04-18T16:14:40.095730 #30788]  INFO -- : Handler: tests#show
+I, [2019-04-18T16:14:40.096771 #30788]  INFO -- : Response: 200 [text/html] tests/show

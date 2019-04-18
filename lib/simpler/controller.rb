@@ -50,7 +50,7 @@ module Simpler
     end
 
     def params
-      @request.params.merge id: Router.new.resource_id(@request.env)
+      @request.params.merge Router.new.resource_id(@request.env)
     end
 
     def render(options)
