@@ -3,6 +3,8 @@ require_relative 'view'
 module Simpler
   class Controller
 
+    CONTENT_TYPE_LIST = { plain: "text/plain", html: "text/html"}.freeze
+
     attr_reader :name, :request, :response
 
     def initialize(env)
@@ -30,7 +32,7 @@ module Simpler
     end
 
     def set_default_headers
-      @response['Content-Type'] ||= 'text/html'
+      @response['Content-Type'] ||= CONTENT_TYPE_LIST[:html]
     end
 
     def write_response
@@ -40,17 +42,12 @@ module Simpler
     end
 
     def render_body
-      if @request.env['simpler.rendering_options'] == :plain
-        @response['Content-Type'] = 'text/plain'
-        View.new(@request.env).render_plain_text
-      else
-        @response['Content-Type'] = 'text/html'
-        View.new(@request.env).render(binding)
-      end
+      @response['Content-Type'] = CONTENT_TYPE_LIST[@request.env['simpler.rendering_options']] if @request.env['simpler.rendering_options']
+      View.new(@request.env).render(binding)
     end
 
     def params
-      @request.params.merge Router.new.resource_id(@request.env)
+      @request.params.merge @request.env["simpler.route_resource_id"]
     end
 
     def render(options)

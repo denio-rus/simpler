@@ -17,55 +17,12 @@ module Simpler
 
     def route_for(env)
       method = env['REQUEST_METHOD'].downcase.to_sym
-      path = convert_path_to_route_form(env)
+      path = env["PATH_INFO"].downcase
   
-      @routes.find { |route| route.match?(method, path) }
-    end
-
-    def resource_id(env)
-      path_elements_array = env['PATH_INFO'].downcase.split('/')
-      path_elements_array.shift
- 
-      size = path_elements_array.size
-      route_params = {}
-
-      n = 0 
-      while n < size do
-        if n.even?
-          controller_name = path_elements_array[n]
-        elsif n.odd? && n + 1 == size
-          resource_id = ":id"
-        else
-          resource_id = ":#{controller_name}_id"
-        end
-        route_params["#{resource_id}"] = path_elements_array[n] if n.odd?
-        n += 1
-      end 
-      route_params
+      @routes.find { |route| route.match?(method, path, env) }
     end
 
     private
-
-    def convert_path_to_route_form(env)
-      path_elements_array = env['PATH_INFO'].downcase.split('/')
-      path_elements_array.shift
-
-      path = []
-      size = path_elements_array.size
-
-      n = 0
-      while n < size do 
-        if n.even? 
-          path << path_elements_array[n]
-        elsif n.odd? && n + 1 == size
-          path << ":id"
-        else 
-          path << ":#{path_elements_array[n-1]}_id" 
-        end
-        n += 1
-      end
-      '/' + path.join('/')
-    end
 
     def add_route(method, path, route_point)
       route_point = route_point.split('#')

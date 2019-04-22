@@ -10,9 +10,12 @@ module Simpler
     end
 
     def render(binding)
-      template = File.read(template_path)
-
-      ERB.new(template).result(binding)
+      if @env['simpler.rendering_options'] == :plain
+        render_plain_text
+      else
+        template = File.read(template_path)
+        ERB.new(template).result(binding)
+      end
     end
 
     def render_plain_text
@@ -38,6 +41,5 @@ module Simpler
 
       Simpler.root.join(VIEW_BASE_PATH, "#{path}.html.erb")
     end
-
   end
 end
