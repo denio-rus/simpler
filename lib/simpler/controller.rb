@@ -3,8 +3,10 @@ require_relative 'view'
 module Simpler
   class Controller
 
-    CONTENT_TYPE_LIST = { plain: "text/plain", html: "text/html"}.freeze
-
+    CONTENT_TYPE_LIST = { plain: "text/plain", html: "text/html"}
+    CONTENT_TYPE_LIST.default = 'unknown type'
+    CONTENT_TYPE_LIST.freeze
+    
     attr_reader :name, :request, :response
 
     def initialize(env)
@@ -47,7 +49,7 @@ module Simpler
     end
 
     def params
-      @request.params.merge @request.env["simpler.route_resource_id"]
+      @request.params.merge @request.env["simpler.route_params"]
     end
 
     def render(options)

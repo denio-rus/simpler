@@ -10,15 +10,15 @@ module Simpler
     end
 
     def render(binding)
-      if @env['simpler.rendering_options'] == :plain
-        render_plain_text
+      if @env['simpler.rendering_options']
+        send("render_#{@env['simpler.rendering_options']}") 
       else
         template = File.read(template_path)
         ERB.new(template).result(binding)
       end
     end
 
-    def render_plain_text
+    def render_plain
       @env['simpler.rendering_value']
     end
 

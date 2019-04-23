@@ -25,6 +25,6 @@ class AppLogger
     handler = "#{env['simpler.controller'].name}##{env['simpler.action']}"
     @logger.info("Handler: #{handler}")
     @logger.info("Response: #{status} [#{headers["Content-Type"]}] "\
-                 "#{env['simpler.template'] || handler.gsub('#', '/') }")
+                 "#{env['simpler.template'] || handler.gsub('#', '/') unless env['simpler.rendering_options']}")
   end
 end
