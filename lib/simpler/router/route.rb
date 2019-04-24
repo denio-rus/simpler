@@ -11,10 +11,31 @@ module Simpler
         @action = action
       end
 
-      def match?(method, path)
-        @method == method && path.match(@path)
+      def match?(method, path_from_url)
+        return false unless @method == method
+
+        parsed_path = parse @path
+        parsed_url = parse path_from_url
+
+        return false unless parsed_path.size == parsed_url.size
+
+        comparison = parsed_path.map.with_index.with_object([]) { |(item, i), arr| arr.push(item == parsed_url[i]) unless item[0] == ':' } 
+        return false unless comparison.all? true 
+        
+        true
       end
 
+      def params(path_from_url)
+        parsed_path = parse @path
+        parsed_url = parse path_from_url
+        parsed_path.each.with_index.with_object({}) { |(item, i), params| params[item] = parsed_url[i] if item[0] == ':' }
+      end
+
+      private
+
+      def parse(path)
+        path.split('/').reject(&:empty?)
+      end
     end
   end
 end
