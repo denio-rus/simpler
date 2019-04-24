@@ -4,7 +4,7 @@ module Simpler
   class Controller
 
     CONTENT_TYPE_LIST = { plain: "text/plain", html: "text/html"}
-    CONTENT_TYPE_LIST.default = 'unknown type'
+    CONTENT_TYPE_LIST.default = 'text/plain'
     CONTENT_TYPE_LIST.freeze
     
     attr_reader :name, :request, :response

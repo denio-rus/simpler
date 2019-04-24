@@ -20,7 +20,7 @@ module Simpler
         return false unless parsed_path.size == parsed_url.size
 
         comparison = parsed_path.map.with_index.with_object([]) { |(item, i), arr| arr.push(item == parsed_url[i]) unless item[0] == ':' } 
-        return false if comparison.include? false 
+        return false unless comparison.all? true 
         
         true
       end
